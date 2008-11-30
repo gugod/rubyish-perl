@@ -38,12 +38,19 @@ sub __send__ {
 
 {
     no strict;
-    *{send} = *{__send__};
+    *send = *__send__;
 }
 
 use YAML;
 sub to_yaml {
     return YAML::Dump(@_);
 }
+
+# TODO
+sub methods {
+    my ($self) = @_;
+    return ("TODO");
+}
+
 
 1;
