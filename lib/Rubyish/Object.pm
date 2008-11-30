@@ -1,6 +1,7 @@
 use strict;
 
 package Rubyish::Object;
+use UNIVERSAL::isa;
 
 sub new {
     return bless {}, shift;
@@ -16,6 +17,16 @@ sub superclass {
 sub class {
     my ($self) = @_;
     return ref($self) || "Rubyish::Class";
+}
+
+sub is_a {
+    my ($self, $class) = @_;
+    if (ref($self)) {
+        return 1 if $self->class eq $class;
+        return ref($self)->isa($class);
+    }
+
+    return $self->isa($class);
 }
 
 sub __send__ {

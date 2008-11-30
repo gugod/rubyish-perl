@@ -2,12 +2,42 @@
 use strict;
 use lib 't/lib';
 use Test::More;
+
+use Rubyish::Class;
+use Rubyish::Object;
+use Rubyish::Module;
 use Cat;
 
-plan tests => 8;
+plan tests => 15;
+
+{
+    my $obj = Cat->new;
+
+    diag "The class of an object of Cat is " . $obj->class;
+    diag "The superclass of an object of Cat is " . $obj->superclass;
+
+    ok $obj->is_a("Cat") , "An object of Cat is a Cat";
+    ok $obj->is_a("Animal") , "An object of Cat is a Animal";
+    ok $obj->is_a("Rubyish::Object") , "An object of Cat is a Rubyish::Object";
+
+ TODO: {
+        local $TODO = "...";
+        ok !$obj->is_a("Rubyish::Module"), "An object of Cat is not a Rubyish::Module";
+        ok !$obj->is_a("Rubyish::Class"),  "An object of Cat is not a Rubyish::Class";
+    }
+}
 
 {
     # Object is Class. Class is Object.
+    TODO : {
+        local $TODO = "...";
+        ok( Rubyish::Object->is_a( "Rubyish::Class" ) , "Object is a Class");
+    }
+
+    ok( Rubyish::Class->is_a( "Rubyish::Object" ) , "Class is a Object");
+}
+
+{
     is(Rubyish::Object->class, "Rubyish::Class");
     is(Rubyish::Module->class, "Rubyish::Class");
     is(Rubyish::Class->class, "Rubyish::Class");
@@ -16,7 +46,6 @@ plan tests => 8;
     is(Rubyish::Module->superclass, "Rubyish::Object");
     is(Rubyish::Class->superclass, "Rubyish::Module");
 }
-
 
 {
     my $pet = Cat->new;
