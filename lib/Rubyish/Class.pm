@@ -7,6 +7,17 @@ sub new {
     return bless {}, shift;
 }
 
+sub class {
+    my ($self) = @_;
+    return ref($self);
+}
+
+sub superclass {
+    my ($self) = @_;
+    no strict;
+    return ${ref($self) . "::ISA"}[-1];
+}
+
 use YAML;
 sub to_yaml {
     return YAML::Dump(@_);
