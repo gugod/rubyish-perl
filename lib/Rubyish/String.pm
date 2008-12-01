@@ -37,4 +37,8 @@ sub replace {
     $self;
 }
 
+sub inspect {
+    ${$_[0]}
+}
+
 1;

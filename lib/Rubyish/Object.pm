@@ -28,7 +28,7 @@ sub superclass {
     my ($self) = @_;
     my $class = ref($self) || $self;
     no strict;
-    return ${"${class}::ISA"}[-1];
+    return String( ${"${class}::ISA"}[-1] );
 }
 
 # overwrite the same method in Class
