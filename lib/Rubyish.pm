@@ -4,6 +4,8 @@ our $VERSION = "0.10";
 use strict;
 use warnings;
 
+my @SPECIAL_WORD = qw(def);
+
 sub import {
     my ($class, @args) = @_;
     my $caller = caller;

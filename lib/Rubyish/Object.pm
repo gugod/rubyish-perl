@@ -46,6 +46,8 @@ sub is_a {
     return $self->isa($class);
 }
 
+sub kind_of { is_a(@_) } # alias of is_a
+
 =head2 __send__
 
 Invokes method by string
@@ -97,8 +99,8 @@ Return a list of names of methods
 use Class::Inspector;
 sub methods {
     my $result = "[";
-    for (@{ Class::Inspector->functions(ref($_[0])) }) {
-        $result .= '"' . $_ . '", ';
+    for (@{ Class::Inspector->methods(ref($_[0]), "public") }) {
+        $result .= '"' . $_ . '", ' unless $_ ~~ qw(def); # use @Rubyish::SPECIAL_WORD later
     }
     $result =~ s/, $//;
     $result .= "]";
