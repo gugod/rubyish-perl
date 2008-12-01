@@ -48,6 +48,8 @@ use C<def> to define instance methods of your classes.
 
 Kang-min Liu  C<< <gugod@gugod.org> >>
 
+shelling C<shelling@cpan.org>
+
 =head1 LICENCE AND COPYRIGHT
 
 Copyright (c) 2008, Kang-min Liu C<< <gugod@gugod.org> >>.

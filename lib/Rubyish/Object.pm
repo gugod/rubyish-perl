@@ -93,10 +93,9 @@ Return a list of names of methods
 
 =cut
 
-# TODO
+use Class::Inspector;
 sub methods {
-    my ($self) = @_;
-    return ("TODO");
+    Class::Inspector->functions(ref($_[0]));
 }
 
 
