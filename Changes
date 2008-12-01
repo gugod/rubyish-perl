@@ -1,0 +1,17 @@
+Revision history for Perl extension Rubyish.
+
+current
+    - methods implement
+      + Object
+        - #inspect
+        - #methods
+        - #is_a
+        - #kind_of
+      + Class
+        - #class
+        - #superclass
+    - special word implement
+      + def
+
+0.01  Dec 01 2008
+    - original version
