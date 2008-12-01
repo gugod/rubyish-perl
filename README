@@ -1,0 +1,24 @@
+Rubyish-Perl
+===========
+
+INTRODUCTION
+
+INSTALLATION
+
+    perl Makefile.PL
+    make
+    make test
+    make install
+
+AUTHOR
+
+gugod <gugud@gugod.org>
+shelling <shelling@cpan.org>
+
+COPYRIGHT AND LICENCE
+
+Copyright © 2008 gugod, shelling. All right reserved.
+
+MIT X11 Licence
+
+
