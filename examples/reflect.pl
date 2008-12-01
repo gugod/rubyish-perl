@@ -13,4 +13,4 @@ print "Oreo's sound is " . $oreo->sound . "\n";
 print "Oreo's color is " . $oreo->color . ".\n";
 print "Oreo's master is " . $oreo->master . ".\n";
 print $oreo->superclass . "\n";
-print $oreo->methods . "\n";
+print $oreo->methods->inspect , "\n";
