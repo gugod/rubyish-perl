@@ -105,5 +105,12 @@ sub methods {
     # migrate to Rubyish::String when it is done
 }
 
+=head2 inpsect
+
+Returns a string containing a human-readable representation of obj.
+
+=cut
+
+sub inspect { Dumper($_[0]) }
 
 1;
