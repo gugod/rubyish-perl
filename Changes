@@ -14,6 +14,7 @@ current
         - #String
         - #Array
         - #Hash
+        - #puts
       + Array
         - #at
       + Hash

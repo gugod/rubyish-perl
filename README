@@ -1,14 +1,27 @@
 Rubyish-Perl
-===========
+============
 
-INTRODUCTION
+Perl Programming, The Rubyish Way.
 
 INSTALLATION
+
+To install this module type the following:
 
     perl Makefile.PL
     make
     make test
     make install
+
+SUPPORT AND DOCUMENTATION
+
+After installing, you can find documentation for this module with the perldoc command.
+
+    perldoc Rubyish
+
+If yor need any support, look for more information at:
+
+    Project Repository:
+        http://github.com/gugod/rubyish-perl/tree/master
 
 AUTHOR
 
@@ -19,6 +32,6 @@ COPYRIGHT AND LICENCE
 
 Copyright © 2008 gugod, shelling. All right reserved.
 
-MIT X11 Licence
+This project is licensed under MIT X11 Licence.
 
 
