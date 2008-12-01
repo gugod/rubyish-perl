@@ -12,10 +12,7 @@ plan tests => 3;
 
     ok $c->is_a('Rubyish::Object'), "An object is a Rubyish::Object";
 
-    TODO: {
-        local $TODO = "...";
-        ok !$c->is_a('Rubyish::Module'), "An object is not a Rubyish::Module";
-        ok !$c->is_a('Rubyish::Class'), "An object is not a Rubyish::Class";
-    }
+    ok !$c->is_a('Rubyish::Module'), "An object is not a Rubyish::Module";
+    ok !$c->is_a('Rubyish::Class'), "An object is not a Rubyish::Class";
 }
 
