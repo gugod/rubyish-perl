@@ -1,11 +1,9 @@
 package Cat;
 use Rubyish;
 
-attr_accessor([ "name" ]);
+attr_accessor "name", "color", "master";
 
-def meow {
-    print "meow, meow, meow\n";
-};
+def sound { "meow, meow, meow" }
 
 def play {
     for my $stuff(@args) {

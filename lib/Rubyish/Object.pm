@@ -98,12 +98,8 @@ Return a list of names of methods
 
 use Class::Inspector;
 sub methods {
-    my $result = "[";
-    for (@{ Class::Inspector->methods(ref($_[0]), "public") }) {
-        $result .= '"' . $_ . '", ' unless $_ ~~ qw(def); # use @Rubyish::SPECIAL_WORD later
-    }
-    $result =~ s/, $//;
-    $result .= "]";
+    my $methods = Class::Inspector->methods(ref($_[0]), "public");
+    '["' . join('", "', @$methods) . '"]';
 
     # use primitive datatype temporarily
     # migrate to Rubyish::String when it is done

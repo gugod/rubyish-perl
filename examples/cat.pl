@@ -1,16 +1,14 @@
 #!/usr/bin/env perl
 
-use lib 'lib';
+use lib qw(lib examples/lib);
 use Cat;
 
-my $oreo = Cat->new;
+my $oreo = Cat->new->name("Oreo");
 
-$oreo->name("Oreo");
-
-$oreo->meow;
+print $oreo->sound . "\n";
 
 $oreo->play(qw(CHEESE BURGER));
 
 print '$oreo is a ' . ref($oreo) . "\n";
 
-print $oreo->to_yaml;
+print "Oreo to YAML:\n" . $oreo->to_yaml;

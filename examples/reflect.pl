@@ -3,19 +3,10 @@
 use warnings;
 use strict;
 
-use lib 'lib';
+use lib qw(lib examples/lib);
+use Cat;
 
 
-{
-    package Cat;
-    use Rubyish;
-
-    attr_accessor "name", "color", "master";
-
-    def sound { "meow, meow" }
-}
-
-package main;
 
 my $oreo = Cat->new->name("oreo")->color("white")->master("tvcafe");
 print "Oreo's sound is " . $oreo->sound . "\n";
