@@ -3,7 +3,7 @@ use strict;
 package Rubyish::Class;
 use base 'Rubyish::Module';
 
-use Rubyish::Attribute ":all";
+use Rubyish::Attribute;
 
 sub import {
     my $caller = caller;
