@@ -14,6 +14,10 @@ current
         - #String
         - #Array
         - #Hash
+      + Array
+        - #at
+      + Hash
+        - #fetch
     - special word implement
       + def
 

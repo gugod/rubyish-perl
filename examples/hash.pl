@@ -3,7 +3,9 @@
 use lib qw(lib examples/lib);
 use Rubyish;
 
-my $hash = Rubyish::Hash->new({ hello => "world" });
+my $hash = Rubyish::Hash->new({ "hello" => "world" });
 
-print $hash->inspect , "\n";
+print $hash->inspect, "\n";
+
+print $hash->fetch("hello"), "\n";
 
