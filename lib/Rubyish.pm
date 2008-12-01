@@ -10,11 +10,26 @@ sub import {
     my ($class, @args) = @_;
     my $caller = caller;
     if($caller eq "main") {
-        eval qq{package $caller; use Rubyish::Syntax::def;};
+        eval qq{
+                package $caller;
+                use Rubyish::Kernel;
+               };
     }
     else {
-        eval qq{package $caller; use base 'Rubyish::Class'; use Rubyish::Attribute; use Rubyish::Syntax::def;};
+        eval qq{
+                package $caller; 
+                use base 'Rubyish::Class';
+                use base 'Rubyish::Object';
+                use Rubyish::Attribute;
+               };
     }
+    eval qq{
+            package $caller;
+            use Rubyish::Syntax::def;
+            use Rubyish::String;
+            use Rubyish::Array;
+            use Rubyish::Hash;
+           };
 };
 
 1;

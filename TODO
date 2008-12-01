@@ -11,7 +11,7 @@
   + #private
   + #protected
 
-- Kennel
+- Kernel
   + #Hash()   #=> return Rubyish::Hash
   + #Array()  #=> return Rubyish::Array
   + #String() #=> return Rubyish::String

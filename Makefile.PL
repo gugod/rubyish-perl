@@ -8,6 +8,7 @@ requires
     'Devel::Declare' => '0.003003',
     'Rubyish::Attribute' => '1.0',
     'YAML' => 0;
+    'Sub::Exporter' => 0;
 
 WriteAll;
 
