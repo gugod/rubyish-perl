@@ -1,0 +1,17 @@
+- main topic
+  + Object is parent of all class 
+  + Implement skeleton of Rubyish::Hash, Rubyish::Array, Rubyish::String
+
+- Object
+  + #__id__
+  + #inspect
+
+- Class
+  + #public
+  + #private
+  + #protected
+
+- Kennel
+  + #Hash()   #=> return Rubyish::Hash
+  + #Array()  #=> return Rubyish::Array
+  + #String() #=> return Rubyish::String
