@@ -44,6 +44,8 @@ Rubyish - Perl programming, the rubyish way.
     package Cat;
     use Rubyish;
 
+    attr_accessor "name", "color";
+
     def sound { "meow, meow" }
 
     def speak {
@@ -53,13 +55,19 @@ Rubyish - Perl programming, the rubyish way.
     ###
     package main;
 
-    my $pet = Cat->new;
-    $cat->speak;
+    my $pet = Cat->new->name("oreo");
+    $cat->speak; #=> "A cat goes meow, meow"
+    $cat->name;  #=> "oreo"
 
 =head1 DESCRIPTION
 
 So far it does not do many but just like synopsis depicted. You can
 use C<def> to define instance methods of your classes.
+
+All thing in Rubyish is object, and all methods should return object, but something is exceptive.
+Following is some methods return primitive datatype:
+
+Object#inspect #=> string, and all your #inspect should return string.
 
 =head1 AUTHOR
 
