@@ -8,6 +8,7 @@ Rubyish::Object - the parent class of all classes in Rubyish
 
 package Rubyish::Object;
 use UNIVERSAL::isa;
+use Data::Dumper;
 
 =head1 FUNCTIONS
 
@@ -95,7 +96,15 @@ Return a list of names of methods
 
 use Class::Inspector;
 sub methods {
-    Class::Inspector->functions(ref($_[0]));
+    my $result = "[";
+    for (@{ Class::Inspector->functions(ref($_[0])) }) {
+        $result .= '"' . $_ . '", ';
+    }
+    $result =~ s/, $//;
+    $result .= "]";
+
+    # use primitive datatype temporarily
+    # migrate to Rubyish::String when it is done
 }
 
 

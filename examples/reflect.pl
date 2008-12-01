@@ -3,6 +3,9 @@
 use warnings;
 use strict;
 
+use lib 'lib';
+
+
 {
     package Cat;
     use Rubyish;
@@ -19,4 +22,4 @@ print "Oreo's sound is " . $oreo->sound . "\n";
 print "Oreo's color is " . $oreo->color . ".\n";
 print "Oreo's master is " . $oreo->master . ".\n";
 print $oreo->superclass . "\n";
-$oreo->methods;
+print $oreo->methods . "\n";
