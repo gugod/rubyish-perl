@@ -12,3 +12,6 @@ plan tests => 1;
 my $array = Array([0..100]);
 
 is $array->at(3), 3;
+is $array->[3], 3;
+is $array->size, 101;
+is $array->length, 101;
