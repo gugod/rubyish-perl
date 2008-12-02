@@ -8,7 +8,7 @@ plan tests => 2;
 
 my $obj = Simple->new;
 
-my @methods = $obj->methods;
+my $methods = $obj->methods;
 
 TODO : {
     local $TODO = "Need to traverse the object hirechy to get all methods of an object.";
