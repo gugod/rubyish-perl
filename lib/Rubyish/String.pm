@@ -6,7 +6,8 @@ Rubyish::String - String object acts as ruby
 
 package Rubyish::String;
 
-use base Rubyish::Object;
+use base 'Rubyish::Object';
+use Rubyish::Syntax::def;
 
 =head2 new($scalar) #=> string object
 
@@ -18,8 +19,10 @@ constructor
 =cut
 
 sub new {
-    my $self = defined($_[1]) ? \$_[1] : do{\(my $o = '')};
-    bless $self, $_[0];
+    my ($class, $str) = @_;
+    my $self = defined($str) ? \"$str" : \"";
+    # my $self = defined($_[1]) ? \$_[1] : do{\(my $o = '')};
+    bless $self, $class;
 }
 
 =head2 replace($scalar) #=> $instance
@@ -43,5 +46,11 @@ Not Documented
 =cut
 
 sub inspect { ${$_[0]} }
+
+def gsub($pattern, $replacement) {
+    my $str = "$$self";
+    $str =~ s/$pattern/$replacement/g;
+    return $str;
+};
 
 1;

@@ -8,7 +8,7 @@ package Rubyish::Array;
 use strict;
 
 use base qw(Rubyish::Object); # inherit parent
-use base qw(Rubyish::Kernel); # import module
+
 use Rubyish::Syntax::def;
 
 use Data::Dumper;
