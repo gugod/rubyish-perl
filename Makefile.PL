@@ -7,7 +7,9 @@ abstract 'Perl programming, the rubyish way.';
 requires
     'Devel::Declare' => '0.003003',
     'Rubyish::Attribute' => '1.0',
-    'YAML' => 0;
+    'YAML' => 0,
+    'Data::Dumper' => 0,
+    'Class::Inspector' => 0,
     'Sub::Exporter' => 0;
 
 WriteAll;
