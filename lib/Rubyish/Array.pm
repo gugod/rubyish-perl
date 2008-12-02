@@ -61,5 +61,10 @@ Return length of Array object.
 def size() { scalar @{$self} };
 { no strict; *length = *size }
 
+def join($sep) {
+    $sep = $, unless defined $sep;
+    return CORE::join($sep, @{$self})
+};
+
 
 1;
