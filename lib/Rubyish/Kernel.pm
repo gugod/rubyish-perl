@@ -19,8 +19,8 @@ sub Hash {
 }
 
 sub puts {
-    @_ = map { if (ref($_) =~ /Rubyish/) { $_ = $_->inspect } } @_;
-    print @_, "\n";
+    print map { if (ref($_) =~ /Rubyish/) { $_ = $_->inspect } else { $_ = $_ } } @_;
+    print "\n";
 }
 
 1;
