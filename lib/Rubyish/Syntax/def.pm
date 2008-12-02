@@ -16,8 +16,15 @@ sub import {
 
 sub parse_proto {
     my $ctx = shift;
-    # my ($proto) = @_;
-    my $inject = 'my ($self, @args) = @_;';
+    my ($proto) = @_;
+    my $inject = 'my ($self';
+    if (defined $proto) {
+        $inject .= ", $proto" if length($proto);
+        $inject .= ') = @_; ';
+    }
+    else {
+        $inject .= ') = shift;';
+    }
     return $inject;
 }
 
