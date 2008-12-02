@@ -10,6 +10,8 @@ package Rubyish::Object;
 use UNIVERSAL::isa;
 use Data::Dumper;
 use Rubyish::Kernel;
+use Rubyish::Syntax::def;
+use Scalar::Util qw(refaddr);
 
 =head1 FUNCTIONS
 
@@ -24,6 +26,12 @@ sub new {
     my $self = {};
     return bless $self, $class;
 }
+
+def object_id {
+    refaddr $self;
+};
+
+{ no strict; *__id__ = *object_id; }
 
 # overwrite the same method in Class
 sub superclass {

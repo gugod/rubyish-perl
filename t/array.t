@@ -26,11 +26,11 @@ is $array->length, 101, "Array#length";
 
 {
     my $a = Array[0..3];
-    my $id = "$a"; # ARRAY(0x543210)
+    my $id = $a->object_id;
 
     $a->clear;
 
     is $a->size, 0;
     is_deeply $a, [];
-    is "$a", $id, "The object identifier remains the same after it's cleared.";
+    is $a->object_id, $id, "The object identifier remains the same after it's cleared.";
 }
