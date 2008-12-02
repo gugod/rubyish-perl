@@ -18,8 +18,8 @@ constructor
 =cut
 
 sub new {
-    my $self = $_[1] ? \$_[1] : do{\(my $o = '')};
-    bless $self, shift;
+    my $self = defined($_[1]) ? \$_[1] : do{\(my $o = '')};
+    bless $self, $_[0];
 }
 
 =head2 replace($scalar) #=> $instance
@@ -33,9 +33,14 @@ replace content
 
 sub replace {
     my ($self, $arg) = @_;
-    $$self = $arg;
     $self;
 }
+
+=head2 inspect
+
+Not Documented
+
+=cut
 
 sub inspect { ${$_[0]} }
 
