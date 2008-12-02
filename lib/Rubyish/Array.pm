@@ -1,7 +1,10 @@
 package Rubyish::Array;
+use strict;
 
 use base qw(Rubyish::Object); # inherit parent
 use base qw(Rubyish::Kernel); # import module
+use Rubyish::Syntax::def;
+
 use Data::Dumper;
 
 =head1 FUNCTIONS
@@ -31,9 +34,8 @@ sub inspect {
 
 =cut
 
-sub at {
-    my ($self, $index) = @_;
+def at($index) {
     @{$self}[$index];
-}
+};
 
 1;
