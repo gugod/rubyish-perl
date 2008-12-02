@@ -18,7 +18,7 @@ sub import {
 sub parse_proto {
     my $ctx = shift;
     my ($proto) = @_;
-    print "class: $proto\n";
+    # print "class: $proto\n";
     # my $inject = 'my ($self, @args) = @_;';
     return '';
 }

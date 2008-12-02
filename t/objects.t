@@ -20,11 +20,8 @@ plan tests => 15;
     ok $obj->is_a("Animal") , "An object of Cat is a Animal";
     ok $obj->is_a("Rubyish::Object") , "An object of Cat is a Rubyish::Object";
 
- TODO: {
-        local $TODO = "...";
-        ok !$obj->is_a("Rubyish::Module"), "An object of Cat is not a Rubyish::Module";
-        ok !$obj->is_a("Rubyish::Class"),  "An object of Cat is not a Rubyish::Class";
-    }
+    ok !$obj->is_a("Rubyish::Module"), "An object of Cat is not a Rubyish::Module";
+    ok !$obj->is_a("Rubyish::Class"),  "An object of Cat is not a Rubyish::Class";
 }
 
 {
@@ -38,13 +35,13 @@ plan tests => 15;
 }
 
 {
-    is(Rubyish::Object->class, "Rubyish::Class");
-    is(Rubyish::Module->class, "Rubyish::Class");
-    is(Rubyish::Class->class, "Rubyish::Class");
+    is(Rubyish::Object->class, "Rubyish::Class", "Object.class == Class");
+    is(Rubyish::Module->class, "Rubyish::Class", "Module.class == Class");
+    is(Rubyish::Class->class, "Rubyish::Class",  "Class.class == Class");
 
-    is(Rubyish::Object->superclass, undef);
-    is(Rubyish::Module->superclass, "Rubyish::Object");
-    is(Rubyish::Class->superclass, "Rubyish::Module");
+    is(Rubyish::Object->superclass, undef, "Object.sperclass == nil");
+    is(Rubyish::Module->superclass, "Rubyish::Object", "Module.superclass == Object");
+    is(Rubyish::Class->superclass, "Rubyish::Module", "Class.superclass == Module");
 }
 
 {

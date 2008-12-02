@@ -20,7 +20,9 @@ Not documented
 =cut
 
 sub new {
-    return bless {}, shift;
+    my ($class) = @_;
+    my $self = {};
+    return bless $self, $class;
 }
 
 # overwrite the same method in Class
@@ -28,7 +30,7 @@ sub superclass {
     my ($self) = @_;
     my $class = ref($self) || $self;
     no strict;
-    return String( ${"${class}::ISA"}[-1] );
+    return ${"${class}::ISA"}[-1];
 }
 
 # overwrite the same method in Class
@@ -47,7 +49,10 @@ sub is_a {
     return $self->isa($class);
 }
 
-sub kind_of { is_a(@_) } # alias of is_a
+{
+    no strict;
+    *kind_of = *is_a;
+}
 
 =head2 __send__
 

@@ -18,7 +18,6 @@ sub import {
     else {
         eval qq{
                 package $caller; 
-                use base 'Rubyish::Class';
                 use base 'Rubyish::Object';
                 use Rubyish::Attribute;
                };
