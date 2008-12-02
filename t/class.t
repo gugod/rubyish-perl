@@ -6,9 +6,7 @@ use Rubyish::Syntax::class;
 
 use Test::More;
 
-plan tests => 1;
-
-local $TODO = "inject 'class' keyword and let it define a package.";
+plan skip_all => "Test this after we inject 'class' keyword and let it define a package.";
 
 class Cat {
     def sound { "meow" };

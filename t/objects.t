@@ -13,8 +13,8 @@ plan tests => 15;
 {
     my $obj = Cat->new;
 
-    diag "The class of an object of Cat is " . $obj->class;
-    diag "The superclass of an object of Cat is " . $obj->superclass;
+    # diag "The class of an object of Cat is " . $obj->class;
+    # diag "The superclass of an object of Cat is " . $obj->superclass;
 
     ok $obj->is_a("Cat") , "An object of Cat is a Cat";
     ok $obj->is_a("Animal") , "An object of Cat is a Animal";
