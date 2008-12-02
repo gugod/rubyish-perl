@@ -1,6 +1,6 @@
 =head1 NAME
 
-Rubyish::String - String object acts like ruby
+Rubyish::String - String object acts as ruby
 
 =cut
 

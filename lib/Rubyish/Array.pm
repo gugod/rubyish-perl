@@ -1,3 +1,9 @@
+=head1 NAME
+
+Rubyish::Array - Array object acts as ruby
+
+=cut
+
 package Rubyish::Array;
 use strict;
 
