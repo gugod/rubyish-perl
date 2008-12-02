@@ -30,12 +30,30 @@ sub inspect {
 }
 
 =head2 at()
+=head2 []
 
+Get value at given index.
+
+    $array = Array([(0..5)])
+    $array->at(2)   #=> 2
+    $array->[2]     #=> 2
 
 =cut
 
-def at($index) {
-    @{$self}[$index];
-};
+def at($index) { $self->[$index] };
+
+=head2 size()
+=head2 length()
+
+Return length of Array object.
+
+    $array = Array([(0..5)])
+    $array->length  #=> 6
+
+=cut
+
+def size() { scalar @{$self} };
+{ no strict; *length = *size }
+
 
 1;
