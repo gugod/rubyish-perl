@@ -66,5 +66,9 @@ def join($sep) {
     return CORE::join($sep, @{$self})
 };
 
+def clear {
+    delete @$self[0..$#$self];
+    $self;
+}
 
-1;
+;

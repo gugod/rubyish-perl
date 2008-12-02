@@ -7,7 +7,7 @@ use lib 't/lib';
 use Rubyish;
 
 use Test::More;
-plan tests => 7;
+plan tests => 10;
 
 my $array = Array([0..100]);
 
@@ -22,4 +22,15 @@ is $array->length, 101, "Array#length";
     is $array->join(","), "0,1,2,3";
     local $, = ",";
     is $array->join, "0,1,2,3";
+}
+
+{
+    my $a = Array[0..3];
+    my $id = "$a"; # ARRAY(0x543210)
+
+    $a->clear;
+
+    is $a->size, 0;
+    is_deeply $a, [];
+    is "$a", $id, "The object identifier remains the same after it's cleared.";
 }
