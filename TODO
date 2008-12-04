@@ -1,11 +1,11 @@
 - main topic
   + Object is parent of all class 
   + Implement skeleton of Rubyish::Hash, Rubyish::Array, Rubyish::String    # done
-  + overload "" [] {}. Return object automatically
   + overload print function. If parameters is object in Rubyish, call #to_s automatically
+  + C extesion, "" return String object, [] {} return Array and Hash object respectively.
 
 - Object
-  + #__id__
+  + #__id__         # done
   + #inspect 
 
 - Class
@@ -17,3 +17,12 @@
   + #Hash()   #=> return Rubyish::Hash      # done
   + #Array()  #=> return Rubyish::Array     # done
   + #String() #=> return Rubyish::String    # done
+
+- Module
+
+- Hash
+
+- Array
+
+- String
+
