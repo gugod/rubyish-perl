@@ -9,7 +9,6 @@ Rubyish::Object - the parent class of all classes in Rubyish
 package Rubyish::Object;
 use UNIVERSAL::isa;
 use Rubyish::Syntax::def;
-use Scalar::Util qw(refaddr);
 use Rubyish::Kernel;
 
 =head1 FUNCTIONS

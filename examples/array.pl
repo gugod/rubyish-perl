@@ -11,6 +11,7 @@ puts $new_array;
 
 puts $new_array->methods;
 
+puts $new_array->superclass;
 puts $new_array->size;
 
 puts $new_array->each( sub {$_+1} );
