@@ -6,6 +6,8 @@ use Rubyish::Kernel;
 
 $obj = Rubyish::Object->new;
 
+puts $obj->object_id;
+
 $methods = $obj->methods;
 
 puts $obj->methods;
