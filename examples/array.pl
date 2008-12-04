@@ -2,7 +2,6 @@
 
 use lib qw(lib examples/lib);
 use Rubyish;
-use Rubyish::Kernel;
 
 my $array = Rubyish::Array->new([1, 2, 3, 4, 5]);
 

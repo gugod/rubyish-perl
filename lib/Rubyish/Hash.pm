@@ -10,7 +10,12 @@ sub new {
 }
 
 sub inspect {
-    Dumper($_[0])
+    my ($self) = @_;
+    my $result;
+    while ( my ($key, $value) = each %{$self} ) {
+        $result .= "$key => $value, ";
+    }
+    "{ " . $result . "}";
 }
 
 sub fetch {
@@ -18,8 +23,13 @@ sub fetch {
     $self->{$key}
 }
 
-def each($sub) {
-    while ( my ($key, $value) = each %{$self} ) { $sub->($key,$value) }
+sub each {
+    my ($self, $sub) = @_;
+    %result = %{$self};
+    while ( my ($key, $value) = each %result ) { 
+        $sub->($key,$value)
+    }
+    bless \%result, ref($self);
 };
 { no strict; *map = *each; }
 

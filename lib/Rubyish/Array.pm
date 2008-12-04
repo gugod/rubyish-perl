@@ -8,7 +8,6 @@ package Rubyish::Array;
 use strict;
 
 use base qw(Rubyish::Object); # inherit parent
-use Rubyish::Kernel;
 use Rubyish::Syntax::def;
 
 =head1 FUNCTIONS
@@ -78,4 +77,4 @@ def each($sub) {
 };
 { no strict; *map = *each; }
 
-;
+1;

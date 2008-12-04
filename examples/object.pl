@@ -2,11 +2,10 @@
 
 use lib qw(lib examples/lib);
 use Rubyish;
-use Rubyish::Kernel;
 
 $obj = Rubyish::Object->new;
 
-puts $obj->object_id;
+Rubyish::Kernel::puts $obj->object_id;
 
 $methods = $obj->methods;
 
