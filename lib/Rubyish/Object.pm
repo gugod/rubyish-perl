@@ -8,7 +8,6 @@ Rubyish::Object - the parent class of all classes in Rubyish
 
 package Rubyish::Object;
 use UNIVERSAL::isa;
-use Data::Dumper;
 use Rubyish::Syntax::def;
 use Scalar::Util qw(refaddr);
 use Rubyish::Kernel;
@@ -113,7 +112,7 @@ Return a list of names of methods
 use Class::Inspector;
 sub methods {
     my $methods = Class::Inspector->methods(ref($_[0]), "public");
-    Array($methods);
+    Rubyish::Kernel::Array($methods);
 }
 
 =head2 inpsect
