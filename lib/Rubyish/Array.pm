@@ -8,14 +8,14 @@ package Rubyish::Array;
 use strict;
 
 use base qw(Rubyish::Object); # inherit parent
-
+use Rubyish::Kernel;
 use Rubyish::Syntax::def;
-
-use Data::Dumper;
 
 =head1 FUNCTIONS
 
 =head2 new
+
+Not Documented
 
 =cut
 
@@ -55,6 +55,7 @@ Return length of Array object.
 
     $array = Array([(0..5)])
     $array->length  #=> 6
+    $array->size    #=> 6
 
 =cut
 
@@ -72,7 +73,7 @@ def clear {
 }
 
 def each($sub) {
-    @{$self} = map { $sub->($_) } @{$self};
+    @{$self} = CORE::map { $sub->($_) } @{$self};
     $self;
 };
 { no strict; *map = *each; }

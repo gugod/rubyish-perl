@@ -12,7 +12,7 @@ current
         #String, #Array, #Hash, #puts
 
       + Array
-        #new, #at, #each, #map
+        #new, #at, #each, #map, #join, #clear
 
       + Hash
         #new, #fetch, #each, #map
