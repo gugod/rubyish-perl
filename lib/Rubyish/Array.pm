@@ -29,10 +29,10 @@ sub new {
 
 =cut
 
-sub inspect {
-    my $result = join '", "', @{$_[0]};
+def inspect {
+    my $result = join '", "', @{$self};
     '["' . $result . '"]';
-}
+};
 
 =head2 at()
 =head2 []
@@ -60,7 +60,7 @@ Return length of Array object.
 
 def size { 
     scalar @{$self};
-}
+};
 { no strict; *length = *size; }
 
 def join($sep) {

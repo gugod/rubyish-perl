@@ -1,16 +1,14 @@
 package Rubyish::Hash;
 
 use base qw(Rubyish::Object); # inherit parent
-use base qw(Rubyish::Kernel); # import module
-use Data::Dumper;
+use Rubyish::Syntax::def;
 
 sub new {
     my $self = ref($_[1]) == "HASH" ? $_[1] : {};
     bless $self, $_[0];
 }
 
-sub inspect {
-    my ($self) = @_;
+def inspect() {
     my $result;
     while ( my ($key, $value) = each %{$self} ) {
         $result .= "$key => $value, ";
@@ -18,13 +16,11 @@ sub inspect {
     "{ " . $result . "}";
 }
 
-sub fetch {
-    my ($self, $key) = @_;
+def fetch($key) {
     $self->{$key}
-}
+};
 
-sub each {
-    my ($self, $sub) = @_;
+def each($sub) {
     %result = %{$self};
     while ( my ($key, $value) = each %result ) { 
         $sub->($key,$value);
