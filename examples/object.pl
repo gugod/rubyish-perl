@@ -9,4 +9,6 @@ Rubyish::Kernel::puts $obj->object_id;
 
 puts $obj->methods;
 
+puts $obj->class;
+
 
