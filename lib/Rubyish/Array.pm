@@ -58,7 +58,10 @@ Return length of Array object.
 
 =cut
 
-def size() { scalar @{$self} };
+sub size { 
+    my ($self) = @_;
+    scalar @{$self};
+}
 { no strict; *length = *size; }
 
 def join($sep) {
@@ -72,7 +75,8 @@ def clear {
 }
 
 def each($sub) {
-    @{$self} = CORE::map { $sub->($_) } @{$self};
+    @tmp_array = @{$self};
+    CORE::map { $sub->($_) } @tmp_array;
     $self;
 };
 { no strict; *map = *each; }

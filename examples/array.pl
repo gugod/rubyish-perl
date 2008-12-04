@@ -11,8 +11,7 @@ my $new_array = Array([1, 2, 3, 4, 5]);
 
 print $new_array->inspect , "\n";
 
-print $new_array->size, "\n";
-puts $new_array->length;
+puts $new_array->size;
 
 
 print $new_array->at(0), "\n";

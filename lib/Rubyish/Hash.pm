@@ -27,9 +27,9 @@ sub each {
     my ($self, $sub) = @_;
     %result = %{$self};
     while ( my ($key, $value) = each %result ) { 
-        $sub->($key,$value)
+        $sub->($key,$value);
     }
-    bless \%result, ref($self);
+    $self;
 };
 { no strict; *map = *each; }
 
