@@ -11,6 +11,7 @@ requires
     'Data::Dumper' => 0,
     'Class::Inspector' => 0,
     'Sub::Exporter' => 0;
+    'UNIVERSAL::isa' => 0;
 
 WriteAll;
 
