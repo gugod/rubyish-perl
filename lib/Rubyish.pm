@@ -28,7 +28,6 @@ sub import {
             use Rubyish::String;
             use Rubyish::Array;
             use Rubyish::Hash;
-            use Rubyish::Kernel;
            };
 };
 

@@ -18,4 +18,9 @@ sub fetch {
     $self->{$key}
 }
 
+def each($sub) {
+    while ( my ($key, $value) = each %{$self} ) { $sub->($key,$value) }
+};
+{ no strict; *map = *each; }
+
 1;
