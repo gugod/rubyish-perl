@@ -19,7 +19,7 @@ Not Documented
 =cut
 
 sub new {
-    my $self = ref($_[1]) == "ARRAY" ? $_[1] : [];
+    my $self = ref($_[1]) eq "ARRAY" ? $_[1] : [];
     bless $self, $_[0];
 }
 

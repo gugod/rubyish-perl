@@ -8,6 +8,7 @@ puts $array;
 
 my $new_array = Array([1, 2, 3, 4, 5]);
 puts $new_array;
+puts $new_array->object_id;
 
 puts $new_array->methods;
 

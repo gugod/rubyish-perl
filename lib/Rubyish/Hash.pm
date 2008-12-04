@@ -4,7 +4,7 @@ use base qw(Rubyish::Object); # inherit parent
 use Rubyish::Syntax::def;
 
 sub new {
-    my $self = ref($_[1]) == "HASH" ? $_[1] : {};
+    my $self = ref($_[1]) eq "HASH" ? $_[1] : {};
     bless $self, $_[0];
 }
 
