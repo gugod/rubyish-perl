@@ -15,6 +15,8 @@ print $new_array->inspect , "\n";
 print $new_array->size, "\n";
 puts $new_array->length;
 
+
 print $new_array->at(0), "\n";
 
+puts $new_array->each( sub {$_+1} );
 

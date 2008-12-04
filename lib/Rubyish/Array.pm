@@ -71,4 +71,9 @@ def clear {
     $self;
 }
 
+def each($sub) {
+    @{$self} = map { $sub->($_) } @{$self};
+    $self;
+};
+
 ;
