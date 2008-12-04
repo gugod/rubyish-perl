@@ -72,13 +72,14 @@ def join($sep) {
 def clear {
     delete @$self[0..$#$self];
     $self;
-}
+};
 
-def each($sub) {
+sub each {
+    my ($self, $sub) = @_;
     @tmp_array = @{$self};
     CORE::map { $sub->($_) } @tmp_array;
     $self;
-};
+}
 { no strict; *map = *each; }
 
 1;
