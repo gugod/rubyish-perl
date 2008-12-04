@@ -3,7 +3,7 @@ use Rubyish;
 
 attr_accessor "name", "color", "master";
 
-def sound { "meow, meow, meow" }
+def sound { "meow, meow, meow" };
 
 def play {
     for my $stuff(@args) {

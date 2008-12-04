@@ -8,10 +8,9 @@ Rubyish::Object - the parent class of all classes in Rubyish
 
 package Rubyish::Object;
 use UNIVERSAL::isa;
-use Data::Dumper;
-use Rubyish::Kernel;
-use Rubyish::Syntax::def;
 use Scalar::Util qw(refaddr);
+use Rubyish::Syntax::def;
+use Rubyish::Kernel;
 
 =head1 FUNCTIONS
 
@@ -34,18 +33,16 @@ def object_id {
 { no strict; *__id__ = *object_id; }
 
 # overwrite the same method in Class
-sub superclass {
-    my ($self) = @_;
+def superclass {
     my $class = ref($self) || $self;
     no strict;
     return ${"${class}::ISA"}[-1];
-}
+};
 
 # overwrite the same method in Class
-sub class {
-    my ($self) = @_;
+def class {
     return ref($self) || "Rubyish::Class";
-}
+};
 
 sub is_a {
     my ($self, $class) = @_;
@@ -57,10 +54,7 @@ sub is_a {
     return $self->isa($class);
 }
 
-{
-    no strict;
-    *kind_of = *is_a;
-}
+{ no strict; *kind_of = *is_a; }
 
 =head2 __send__
 
@@ -111,10 +105,10 @@ Return a list of names of methods
 =cut
 
 use Class::Inspector;
-sub methods {
-    my $methods = Class::Inspector->methods(ref($_[0]), "public");
-    Array($methods);
-}
+def methods {
+    my $methods = Class::Inspector->methods(ref($self), "public");
+    Rubyish::Kernel::Array($methods);
+};
 
 =head2 inpsect
 

@@ -17,7 +17,7 @@ is $array->size, 101, "Array#size";
 is $array->length, 101, "Array#length";
 
 {
-    my $array = Array[0..3];
+    my $array = Array([0..3]);
     is $array->join, "0123";
     is $array->join(","), "0,1,2,3";
     local $, = ",";
@@ -25,7 +25,7 @@ is $array->length, 101, "Array#length";
 }
 
 {
-    my $a = Array[0..3];
+    my $a = Array([0..3]);
     my $id = $a->object_id;
 
     $a->clear;

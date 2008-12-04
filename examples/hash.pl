@@ -9,3 +9,9 @@ print $hash->inspect, "\n";
 
 print $hash->fetch("hello"), "\n";
 
+$hash->each( sub { my ($k,$v) = @_; # write iterator here
+    ($k,$v) = ($v,$k); 
+    print $k, " => ", $v, "\n";
+});
+
+

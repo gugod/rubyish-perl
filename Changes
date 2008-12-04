@@ -3,22 +3,23 @@ Revision history for Perl extension Rubyish.
 current
     - methods implement
       + Object
-        - #inspect
-        - #methods
-        - #is_a
-        - #kind_of
+        #inspect, #methods, #is_a, #kind_of, #__id__, #object_id
+
       + Class
-        - #class
-        - #superclass
+        #class, #superclass
+
       + Kernel
-        - #String
-        - #Array
-        - #Hash
-        - #puts
+        #String, #Array, #Hash, #puts
+
       + Array
-        - #at
+        #new, #at, #each, #map, #join, #clear, #inspect
+
       + Hash
-        - #fetch
+        #new, #fetch, #each, #map, #inspect
+
+      + String
+        #new
+
     - special word implement
       + def
 

@@ -34,10 +34,10 @@ replace content
 
 =cut
 
-sub replace {
-    my ($self, $arg) = @_;
+def replace($arg) {
+    $$self = $arg;
     $self;
-}
+};
 
 =head2 inspect
 
@@ -45,7 +45,7 @@ Not Documented
 
 =cut
 
-sub inspect { ${$_[0]} }
+def inspect { ${$self} };
 
 def gsub($pattern, $replacement) {
     my $str = "$$self";

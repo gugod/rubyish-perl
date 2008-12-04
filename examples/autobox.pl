@@ -2,13 +2,10 @@
 
 use lib qw(lib examples/lib);
 use Rubyish;
+use Rubyish::Autobox;
 
-$string = String("hello");
+$string = String("string");
 
 puts $string->methods;
-
-$string->replace("world");
-
-puts $string;
 
 

@@ -8,19 +8,18 @@ package Rubyish::Array;
 use strict;
 
 use base qw(Rubyish::Object); # inherit parent
-
 use Rubyish::Syntax::def;
-
-use Data::Dumper;
 
 =head1 FUNCTIONS
 
 =head2 new
 
+Not Documented
+
 =cut
 
 sub new {
-    my $self = ref($_[1]) == "ARRAY" ? $_[1] : [];
+    my $self = ref($_[1]) eq "ARRAY" ? $_[1] : [];
     bless $self, $_[0];
 }
 
@@ -30,10 +29,10 @@ sub new {
 
 =cut
 
-sub inspect {
-    my $result = join '", "', @{$_[0]};
+def inspect {
+    my $result = join '", "', @{$self};
     '["' . $result . '"]';
-}
+};
 
 =head2 at()
 =head2 []
@@ -55,11 +54,14 @@ Return length of Array object.
 
     $array = Array([(0..5)])
     $array->length  #=> 6
+    $array->size    #=> 6
 
 =cut
 
-def size() { scalar @{$self} };
-{ no strict; *length = *size }
+def size { 
+    scalar @{$self};
+};
+{ no strict; *length = *size; }
 
 def join($sep) {
     $sep = $, unless defined $sep;
@@ -69,6 +71,13 @@ def join($sep) {
 def clear {
     delete @$self[0..$#$self];
     $self;
-}
+};
 
-;
+def each($sub) {
+    my @tmp_array = @{$self};
+    CORE::map { $sub->($_) } @tmp_array;
+    $self;
+};
+{ no strict; *map = *each; }
+
+1;
