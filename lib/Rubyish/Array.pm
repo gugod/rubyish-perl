@@ -25,9 +25,9 @@ sub new {
     $self->each(sub {
         my $i = shift;
         given ($i) {
-            when ($_ =~ "HASH")  { $_ = Rubyish::Kernel::Hash($_)   }
-            when ($_ =~ "ARRAY") { $_ = Rubyish::Kernel::Array($_)  }
-            default              { $_ = Rubyish::Kernel::String($_) }
+            when ($_ =~ "HASH")  { $_ = Rubyish::Hash->new($_)   }
+            when ($_ =~ "ARRAY") { $_ = Rubyish::Array->new($_)  }
+            default              { $_ = Rubyish::String->new($_) }
         }
     });
     $self;
@@ -40,7 +40,17 @@ sub new {
 =cut
 
 def inspect {
-    my @tmp = map {$_ =~ /Rubyish/ ? $_->inspect : $_} @{$self};
+    my @tmp = map { 
+        if ($_ =~ /Rubyish/) {
+            if ($_ =~ /(Hash|Array)/) {
+                $_->inspect ;
+            } else {
+                '"' . $_->inspect . '"';
+            }
+        } else {
+            '"' . $_ . '"';
+        }
+    } @{$self};
     my $result = join ', ', @tmp;
     '[' . $result . ']';
 };
