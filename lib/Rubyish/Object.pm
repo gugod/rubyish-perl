@@ -116,6 +116,9 @@ Returns a string containing a human-readable representation of obj.
 
 =cut
 
-sub inspect { Dumper($_[0]) }
+def inspect { 
+    scalar($self) =~ /\w+=\w+(\((.*)\))/;
+    "#<" . ref($self) . ":" . $2 . ">";
+};
 
 1;
