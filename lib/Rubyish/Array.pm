@@ -6,6 +6,7 @@ Rubyish::Array - Array object acts as ruby
 
 package Rubyish::Array;
 use strict;
+use 5.010;
 
 use base qw(Rubyish::Object); # inherit parent
 use Rubyish::Syntax::def;
@@ -21,6 +22,15 @@ Not Documented
 sub new {
     my $self = ref($_[1]) eq "ARRAY" ? $_[1] : [];
     bless $self, $_[0];
+    $self->each(sub {
+        my $i = shift;
+        given ($i) {
+            when ($_ =~ "HASH")  { $_ = Rubyish::Kernel::Hash($_)   }
+            when ($_ =~ "ARRAY") { $_ = Rubyish::Kernel::Array($_)  }
+            default              { $_ = Rubyish::Kernel::String($_) }
+        }
+    });
+    $self;
 }
 
 =head2 inspect
@@ -30,8 +40,9 @@ sub new {
 =cut
 
 def inspect {
-    my $result = join '", "', @{$self};
-    '["' . $result . '"]';
+    my @tmp = map {$_ =~ /Rubyish/ ? $_->inspect : $_} @{$self};
+    my $result = join ', ', @tmp;
+    '[' . $result . ']';
 };
 
 =head2 at()
