@@ -15,6 +15,7 @@ constructor
     
     $string = Rubyish::String->new;             #=> bless( do{\(my $o = '')}, 'Rubyish::String' )
     $string = Rubyish::String->new("hello");    #=> bless( do{\(my $o = 'hello')}, 'Rubyish::String' )
+    $string = String("hello");                  # do the same
 
 =cut
 
@@ -46,6 +47,13 @@ Not Documented
 =cut
 
 def inspect { ${$self} };
+
+=head2 gsub($pattern, $replacement) #=> new_str
+
+    $string = String("hello")
+    $string->gsub(qr/ello/, "i")    #=> hi
+
+=cut
 
 def gsub($pattern, $replacement) {
     my $str = "$$self";
