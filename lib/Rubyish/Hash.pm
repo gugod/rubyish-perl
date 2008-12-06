@@ -27,6 +27,7 @@ def inspect() {
     while ( my ($key, $value) = each %{$self} ) {
         $result .= "$key => $value, ";
     }
+    $result =~ s/, $/ /g;
     "{ " . $result . "}";
 }
 

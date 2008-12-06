@@ -17,3 +17,5 @@ print '$oreo is a ' . ref($oreo) . "\n";
 print "Oreo to YAML:\n" . $oreo->to_yaml;
 
 puts $oreo->inspect;
+
+puts $oreo->ancestors;

@@ -121,4 +121,16 @@ def inspect {
     "#<" . ref($self) . ":" . $2 . ">";
 };
 
+=head2 ancestors #=> ancestors Array
+
+All ancestors this class inherit
+
+=cut
+
+def ancestors {
+    no strict;
+    Array([@{ref($self) . "::ISA"}]);
+    # not completed
+};
+
 1;
