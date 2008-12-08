@@ -32,6 +32,7 @@ Makefile.PL
 MANIFEST			This list of files
 META.yml
 README
+t/array-object-is-enumerable.t
 t/array.t
 t/autobox.t
 t/cats.t

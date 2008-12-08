@@ -11,6 +11,8 @@ use 5.010;
 use base qw(Rubyish::Object); # inherit parent
 use Rubyish::Syntax::def;
 
+use Rubyish::Enumerable;
+
 =head1 FUNCTIONS
 
 =head2 new
