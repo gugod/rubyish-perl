@@ -1,7 +1,8 @@
 Revision history for Perl extension Rubyish.
 
-current
-    - methods implement
+0.20:
+    - Add Rubyish:::Autobox that autoboxes scalars to Rubyish::* objects.
+    - methods implementted
       + Object
         #inspect, #methods, #is_a, #kind_of, #__id__, #object_id
 
