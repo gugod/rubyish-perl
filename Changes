@@ -1,28 +1,32 @@
-Revision history for Perl extension Rubyish.
+# Revision history for Perl extension Rubyish.
+
+0.21:
+  - Manifest fix.
+  - Update Changes to be a valid yaml file. Kinda cool.
 
 0.20:
-    - Add Rubyish:::Autobox that autoboxes scalars to Rubyish::* objects.
-    - methods implementted
-      + Object
-        #inspect, #methods, #is_a, #kind_of, #__id__, #object_id
+  - Add Rubyish:::Autobox that autoboxes scalars to Rubyish::* objects.
+  - methods implemented:
+      Object:
+        - #inspect, #methods, #is_a, #kind_of, #__id__, #object_id
 
-      + Class
-        #class, #superclass
+      Class:
+        - #class, #superclass
+  
+      Kernel:
+        - #String, #Array, #Hash, #puts
+  
+      Array:
+        - #new, #at, #size, #length, #each, #map, #join, #clear, #inspect
+  
+      Hash:
+        - #new, #fetch, #each, #map, #inspect
+  
+      String:
+        - #new
 
-      + Kernel
-        #String, #Array, #Hash, #puts
+  - special word implemented: def
 
-      + Array
-        #new, #at, #size, #length, #each, #map, #join, #clear, #inspect
+0.01:
+  - original version
 
-      + Hash
-        #new, #fetch, #each, #map, #inspect
-
-      + String
-        #new
-
-    - special word implement
-      + def
-
-0.01  Dec 01 2008
-    - original version
