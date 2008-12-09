@@ -38,5 +38,11 @@ def any($cb) {
     return $any_true;
 };
 
+def to_a {
+    my @arr;
+    $self->each(sub { push @arr, $_[0] });
+    return Rubyish::Array->new(\@arr);
+};
+
 1;
 
