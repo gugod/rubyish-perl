@@ -25,6 +25,7 @@ sub import {
     eval qq{
             package $caller;
             use Rubyish::Syntax::def;
+            use Rubyish::Syntax::nil;
             use Rubyish::String;
             use Rubyish::Array;
             use Rubyish::Hash;
