@@ -2,7 +2,7 @@
 
 0.30:
   - Renamed the dist to just "Rubyish" since it's quite obvious
-  - More docs
+  - Way more docs
 
 0.22:
   - Fix previous dists.
