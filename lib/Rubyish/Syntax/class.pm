@@ -1,27 +1,17 @@
-package Rubyish::Syntax::class;
-
+package main;
 use strict;
-use warnings;
+sub class { $_[0]->(); }
 
-use base 'Devel::Declare::MethodInstaller::Simple';
+use Devel::Declare;
+use Devel::Declare 'class' => [
+    DECLARE_PACKAGE,
+    sub {
+        my ($usepack, $use, $inpack, $name, $proto, $is_block) = @_;
+        return (sub (&) { shift; }, undef, "package ${name}; use Rubyish;");
+    }
+];
 
-sub import {
-    my $class = shift;
-    my $caller = caller;
-
-    $class->install_methodhandler(
-        into            => $caller,
-        name            => 'class',
-    );
-}
-
-sub parse_proto {
-    my $ctx = shift;
-    my ($proto) = @_;
-    # print "class: $proto\n";
-    # my $inject = 'my ($self, @args) = @_;';
-    return '';
-}
+package Rubyish::Syntax::class;
 
 1;
 
