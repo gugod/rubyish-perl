@@ -1,5 +1,14 @@
 # Revision history for Perl extension Rubyish.
 
+0.30:
+  - Renamed the dist to just "Rubyish" since it's quite obvious
+  - More docs
+
+0.22:
+  - Fix previous dists.
+  - Implement nil and NilClass
+  - Implement Enumerable methods: to_a, all, any
+
 0.21:
   - Manifest fix.
   - Update Changes to be a valid yaml file. Kinda cool.

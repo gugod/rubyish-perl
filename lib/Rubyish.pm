@@ -1,5 +1,5 @@
 package Rubyish;
-our $VERSION = "0.21";
+our $VERSION = "0.30";
 
 use strict;
 use warnings;
@@ -17,7 +17,7 @@ sub import {
     }
     else {
         eval qq{
-                package $caller; 
+                package $caller;
                 use base 'Rubyish::Object';
                 use Rubyish::Attribute;
                };
@@ -61,19 +61,39 @@ Rubyish - Perl programming, the rubyish way.
 
 =head1 DESCRIPTION
 
-So far it does not do many but just like synopsis depicted. You can
-use C<def> to define instance methods of your classes.
+Rubyish provides a way to let you write perl programs that look like
+ruby. You can use it to write Classes, or just executable programs.
 
-All thing in Rubyish is object, and all methods should return object, but something is exceptive.
-Following is some methods return primitive datatype:
+As you can see in the synopsis, you can use C<def> to define instance
+methods of your classes.
 
-Object#inspect #=> string, and all your #inspect should return string.
+=head1 Classes
+
+=over 4
+
+=item L<Rubyish::Kernel>
+
+=item L<Rubyish::Class>
+
+=item L<Rubyish::Object>
+
+=item L<Rubyish::Module>
+
+=item L<Rubyish::Array>
+
+=item L<Rubyish::Hash>
+
+=item L<Rubyish::String>
+
+=item L<Rubyish::Syntax::nil>
+
+=item L<Rubyish::Syntax::def>
+
+=back
 
 =head1 AUTHOR
 
-Kang-min Liu  C<< <gugod@gugod.org> >>
-
-shelling C<shelling@cpan.org>
+Kang-min Liu  C<< <gugod@gugod.org> >>, shelling C<shelling@cpan.org>
 
 =head1 LICENCE AND COPYRIGHT
 

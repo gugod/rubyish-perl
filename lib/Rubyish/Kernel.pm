@@ -1,6 +1,8 @@
 package Rubyish::Kernel;
 use strict;
 use Rubyish::Hash;
+use Rubyish::Array;
+use Rubyish::String;
 
 use Sub::Exporter;
 Sub::Exporter::setup_exporter({

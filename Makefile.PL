@@ -1,6 +1,7 @@
 use inc::Module::Install;
 
-name 'Rubyish-Perl';
+name 'Rubyish';
+
 all_from 'lib/Rubyish.pm';
 abstract 'Perl programming, the rubyish way.';
 
