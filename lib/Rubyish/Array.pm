@@ -58,6 +58,7 @@ def inspect {
 };
 
 =head2 at()
+
 =head2 []
 
 Get value at given index.
@@ -71,6 +72,7 @@ Get value at given index.
 def at($index) { $self->[$index] };
 
 =head2 size()
+
 =head2 length()
 
 Return length of Array object.

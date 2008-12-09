@@ -1,4 +1,5 @@
 package Rubyish;
+use 5.010;
 our $VERSION = "0.30";
 
 use strict;
