@@ -1,7 +1,7 @@
 # auto-generated shipit config file.
-steps = FindVersion, ChangeVersion, CheckChangeLog, DistTest, MakeDist
+steps = FindVersion, ChangeVersion, CheckChangeLog, DistTest, MakeDist, UploadCPAN, Twitter
 
-# svn.tagpattern = MyProj-%v
-# svn.tagpattern = http://code.example.com/svn/tags/MyProj-%v
-
-# CheckChangeLog.files = ChangeLog, MyProj.CHANGES
+CheckChangeLog.files = Changes
+twitter.config = /Users/gugod/.twitterrc
+twitter.distname = Rubyish
+twitter.message = Shipped %d %v - soon at %u
