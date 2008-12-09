@@ -2,6 +2,27 @@ use strict;
 
 package Rubyish::Module;
 use base 'Rubyish::Object';
+use Class::Inspector;
+
+# A Rubyish Module exports all of its subs to caller.
+sub import {
+    my ($class) = @_;
+    my $caller = caller;
+    my $subs = Class::Inspector->methods($class, "expanded");
+
+    for (@$subs) {
+        my ($full, $class_name, $sub_name, $code) = @$_;
+        # warn "$class_name $sub_name $code\n";
+        next unless $class_name eq $class;
+
+        Sub::Install::install_sub({
+            code => $code,
+            into => $caller,
+            as => $sub_name
+        });
+    }
+    return 1;
+}
 
 1;
 
