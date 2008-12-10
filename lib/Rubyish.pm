@@ -1,6 +1,6 @@
 package Rubyish;
 use 5.010;
-our $VERSION = "0.30";
+our $VERSION = "0.31";
 
 use strict;
 use warnings;
