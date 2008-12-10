@@ -14,6 +14,8 @@ sub import {
         eval qq{
                 package $caller;
                 use Rubyish::Kernel;
+                use Rubyish::Syntax::class;
+
                };
     }
     else {
