@@ -29,6 +29,7 @@ lib/Rubyish/Object.pm
 lib/Rubyish/String.pm
 lib/Rubyish/Syntax/class.pm
 lib/Rubyish/Syntax/def.pm
+lib/Rubyish/Syntax/include.pm
 lib/Rubyish/Syntax/nil.pm
 LICENSE
 Makefile.PL
@@ -51,6 +52,7 @@ t/object-id.t
 t/object-isa.t
 t/object-methods.t
 t/objects.t
+t/rubyish-syntax-class.t
 t/simple-object.t
 t/string.t
 TODO
