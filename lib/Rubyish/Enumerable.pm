@@ -89,6 +89,8 @@ concept and alternative implementation of the C<any> function.
 
 =item to_a
 
+Convert the enumerable object to an array.
+
 =back
 
 =head1 SEE ALSO

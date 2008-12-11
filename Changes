@@ -2,7 +2,7 @@
 
 0.31:
   - Add "class" syntax. WOOT.
-
+  - More docs.
 
 0.30:
   - Renamed the dist to just "Rubyish" since it's quite obvious
