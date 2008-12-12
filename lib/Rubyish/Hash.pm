@@ -37,7 +37,8 @@ def inspect() {
     "{ " . $result . "}";
 }
 
-=head2 fetch($key)  #=> $value
+=head2 fetch
+
 =head2 {}
 
 Retrieves the value Element corresponding to the key.
@@ -52,8 +53,9 @@ def fetch($key) {
     $self->{$key}
 };
 
-=head2 each($function) #=> self
-=head2 map($function)  #=> self
+=head2 each
+
+=head2 map
 
     $hash = Hash({ blah~ });
     $hash->each( sub {
