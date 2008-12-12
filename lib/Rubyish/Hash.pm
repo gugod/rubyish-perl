@@ -1,3 +1,9 @@
+=head1 NAME
+
+Rubyish::Hash - Hash (class)
+
+=cut
+
 package Rubyish::Hash;
 
 use base qw(Rubyish::Object); # inherit parent

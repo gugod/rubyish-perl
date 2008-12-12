@@ -1,3 +1,9 @@
+=head1
+
+Rubyish::Kernel - Kernel (module)
+
+=cut
+
 package Rubyish::Kernel;
 use strict;
 use Rubyish::Hash;

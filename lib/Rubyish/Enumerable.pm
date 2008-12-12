@@ -1,3 +1,9 @@
+=head1 NAME
+
+Rubyish::Enumerable - Enumerable (module)
+
+=cut
+
 package Rubyish::Enumerable;
 use strict;
 

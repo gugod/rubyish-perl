@@ -1,6 +1,6 @@
 =head1 NAME
 
-Rubyish::Array - Array object acts as ruby
+Rubyish::Array - Array (class)
 
 =cut
 
