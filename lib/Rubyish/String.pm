@@ -1,6 +1,6 @@
 =head1 NAME
 
-Rubyish::String - String object acts as ruby
+Rubyish::String - String (class)
 
 =cut
 

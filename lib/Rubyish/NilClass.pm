@@ -41,9 +41,9 @@ Rubyish::NilClass - The NilClass implementation
 
 =head1 SYNOPSIS
 
-    nil.to_i
-    nil.to_f
-    nil.to_a
+    nil->to_i
+    nil->to_f
+    nil->to_a
 
 =head1 DESCRIPTION
 

@@ -1,12 +1,15 @@
 - main topic
-  + Object is parent of all class 
-  + Implement skeleton of Rubyish::Hash, Rubyish::Array, Rubyish::String    # done
+ d+ Object is parent of all class 
+ d+ Implement skeleton of Rubyish::Hash, Rubyish::Array, Rubyish::String
   + overload print function. If parameters is object in Rubyish, call #to_s automatically
   + C extesion, "" return String object, [] {} return Array and Hash object respectively.
+  + TrueClass, and true syntax
+  + FalseClass, and false syntax
 
 - Object
-  + #__id__         # done
-  + #inspect 
+ d+ #__id__
+ d+ #inspect 
+  + rewrite #methods, no longer return special word
 
 - Class
   + #public
@@ -14,9 +17,9 @@
   + #protected
 
 - Kernel
-  + #Hash()   #=> return Rubyish::Hash      # done
-  + #Array()  #=> return Rubyish::Array     # done
-  + #String() #=> return Rubyish::String    # done
+ d+ #Hash()   #=> return Rubyish::Hash  
+ d+ #Array()  #=> return Rubyish::Array 
+ d+ #String() #=> return Rubyish::String
 
 - Module
 
