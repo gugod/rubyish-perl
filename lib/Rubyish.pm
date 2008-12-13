@@ -29,6 +29,7 @@ sub import {
             package $caller;
             use Rubyish::Syntax::def;
             use Rubyish::Syntax::nil;
+            use Rubyish::Syntax::true;
             use Rubyish::String;
             use Rubyish::Array;
             use Rubyish::Hash;

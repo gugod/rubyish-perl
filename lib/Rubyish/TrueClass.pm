@@ -1,56 +1,61 @@
-package Rubyish::Syntax::true;
-
+package Rubyish::TrueClass;
 use strict;
-use Sub::Exporter;
-Sub::Exporter::setup_exporter({
-    exports => ['true'],
-    groups => {
-        default => ['true']
+use warnings;
+
+use base qw(Rubyish::Object);
+use Rubyish::Kernel;
+use Rubyish::Syntax::def;
+
+def to_s { String("true") };
+
+# cheat
+def object_id { 2 };
+{ no strict; *__id__ = *object_id; }
+
+{
+    my $obj = bless {}, __PACKAGE__;
+    sub new {
+        return $obj if defined $obj;
+        $obj = bless {}, __PACKAGE__;
+        return $obj;
     }
-});
-
-use Rubyish::TrueClass;
-
-sub true { Rubyish::TrueClass->new }
+}
 
 1;
 
-__END__
-
 =head1 NAME
 
-Rubyish::Syntax::true - Gives you a true object.
+Rubyish::TrueClass - The TrueClass implementation
 
 =head1 SYNOPSIS
 
-    use Rubyish::Syntax::true;
-
-    my $a = true;
+    nil->to_i
+    nil->to_f
+    nil->to_a
 
 =head1 DESCRIPTION
 
-This module exports a C<true> bareword that works almost like Ruby
-C<true>. It represents the singleton object of L<Rubyish::TrueClass>.
-It means boolean true under boolean context, "true" when stringified.
-
-It also keep the behaviour that true always referes to the same,
-singleton object whenever it's used in the program.
-
-=head1 METHODS
-
-The C<true> object has following instance methods:
+This class defnes those instance methods availble for the singleton object C<nil>
 
 =over 4
 
+=item to_i
+
+Always returns 0
+
+=item to_f
+
+Always returns 0.0
+
 =item to_s
 
-Returns "true"
+Always returns an empty string ""
+
+=item to_a
+
+Always returns []
 
 =back
-
-=head1 SEE ALSO
-
-L<Rubyish::TrueClass> for the implementation of these methods.
 
 =head1 AUTHOR
 
@@ -86,5 +91,6 @@ RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A
 FAILURE OF THE SOFTWARE TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF
 SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGES.
+
 
 
