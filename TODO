@@ -3,8 +3,10 @@
  d+ Implement skeleton of Rubyish::Hash, Rubyish::Array, Rubyish::String
   + overload print function. If parameters is object in Rubyish, call #to_s automatically
   + C extesion, "" return String object, [] {} return Array and Hash object respectively.
-  + TrueClass, and true syntax
+ d+ TrueClass, and true syntax
   + FalseClass, and false syntax
+  + rewrite Object#ancestors to show all ancestors
+  + rewrite Kernel#puts to identify whether object is Rubyish or not
 
 - Object
  d+ #__id__
