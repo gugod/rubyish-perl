@@ -1,4 +1,4 @@
-package Rubyish::TrueClass;
+package Rubyish::FalseClass;
 use strict;
 use warnings;
 
@@ -6,10 +6,9 @@ use base qw(Rubyish::Object);
 use Rubyish::Kernel;
 use Rubyish::Syntax::def;
 
-def to_s { String("true") };
+def to_s { String("false") };
 
-# cheat
-def object_id { 2 };
+def object_id { 3 };
 { no strict; *__id__ = *object_id; }
 
 {
@@ -21,21 +20,24 @@ def object_id { 2 };
     }
 }
 
+
 1;
+
+__END__
 
 =head1 NAME
 
-Rubyish::TrueClass - The TrueClass implementation
+Rubyish::FalseClass - The FalseClass implementation
 
 =head1 SYNOPSIS
 
-    true->to_i
-    true->to_f
-    true->to_a
+    false->to_i
+    false->to_f
+    false->to_a
 
 =head1 DESCRIPTION
 
-This class defnes those instance methods availble for the singleton object C<nil>
+This class defnes those instance methods availble for the singleton object C<FalseClass>
 
 =over 4
 
@@ -49,7 +51,7 @@ Always returns 0.0
 
 =item to_s
 
-Always returns an empty string ""
+Always returns an string "false"
 
 =item to_a
 
