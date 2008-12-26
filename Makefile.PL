@@ -6,6 +6,7 @@ all_from 'lib/Rubyish.pm';
 abstract 'Perl programming, the rubyish way.';
 
 requires
+    'autobox'        => 0,
     'UNIVERSAL::isa' => 0,
     'Devel::Declare' => '0.003003',
     'Rubyish::Attribute' => '1.0',
