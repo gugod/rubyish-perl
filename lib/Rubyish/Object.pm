@@ -147,6 +147,20 @@ def ancestors {
     # not completed
 };
 
+=head2 clone
+
+Produces a shollow copy a object. New object would not have the same memory address as ordinary object.
+
+=cut
+
+def clone {
+    give (ref($self)) {
+        when("SCALAR") { my $tmp = ${$self}; bless(\$tmp, ref($self)) }
+        when("ARRAY")  { my @tmp = @{$self}; bless(\@tmp, ref($self)) }
+        when("HASH")   { my %tmp = %{$self}; bless(\%tmp, ref($self)) }
+    }
+};
+
 1;
 
 =head1 AUTHOR

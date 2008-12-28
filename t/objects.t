@@ -8,7 +8,7 @@ use Rubyish::Object;
 use Rubyish::Module;
 use Cat;
 
-plan tests => 15;
+plan tests => 17;
 
 {
     my $obj = Cat->new;
@@ -55,3 +55,9 @@ plan tests => 15;
     is $pet->weight, "5kg", "send method also works";
 }
 
+{
+    my $pet = Cat->new->name("jj");
+    my $pig = $pet->clone;
+    is ref($pig), "Cat";
+    is $pig->name, "jj", "Object#clone works";
+}
