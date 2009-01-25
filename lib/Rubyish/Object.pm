@@ -15,6 +15,8 @@ This is almost all for the internals of Rubyish Perl.
 =cut
 
 package Rubyish::Object;
+use feature qw(switch);
+
 use UNIVERSAL::isa;
 use Scalar::Util qw(refaddr);
 use Rubyish::Syntax::def;
@@ -154,7 +156,7 @@ Produces a shollow copy a object. New object would not have the same memory addr
 =cut
 
 def clone {
-    give (ref($self)) {
+    given (ref($self)) {
         when("SCALAR") { my $tmp = ${$self}; bless(\$tmp, ref($self)) }
         when("ARRAY")  { my @tmp = @{$self}; bless(\@tmp, ref($self)) }
         when("HASH")   { my %tmp = %{$self}; bless(\%tmp, ref($self)) }
