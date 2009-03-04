@@ -8,7 +8,7 @@ package Rubyish::Dir;
 use strict;
 use 5.010;
 
-use base "Rubyish::Object;";
+use base "Rubyish::Object";
 use Rubyish::Syntax::def;
 
 
