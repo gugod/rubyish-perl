@@ -15,5 +15,6 @@ requires
     'Class::Inspector' => 1.23,
     'Sub::Exporter' => 0.982;
 
+auto_set_repository;
 WriteAll;
 
