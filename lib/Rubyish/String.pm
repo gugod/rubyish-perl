@@ -9,6 +9,11 @@ package Rubyish::String;
 use base 'Rubyish::Object';
 use Rubyish::Syntax::def;
 
+use overload
+(
+  "+" => \&op_add,
+);
+
 =head2 new($scalar) #=> string object
 
 constructor
@@ -60,5 +65,14 @@ def gsub($pattern, $replacement) {
     $str =~ s/$pattern/$replacement/g;
     return $str;
 };
+
+=head2 +
+
+=cut
+
+sub op_add {
+  my ($self, $other) = @_;
+  return ref($self)->new(${$self}.${$other});
+}
 
 1;
