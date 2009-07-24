@@ -132,7 +132,7 @@ Returns a string containing a human-readable representation of obj.
 
 =cut
 
-def inspect { 
+def inspect {
     scalar($self) =~ /\w+=\w+(\((.*)\))/;
     "#<" . ref($self) . ":" . $2 . ">";
 };
@@ -155,13 +155,8 @@ Produces a shollow copy a object. New object would not have the same memory addr
 
 =cut
 
-def clone {
-    given (ref($self)) {
-        when("SCALAR") { my $tmp = ${$self}; bless(\$tmp, ref($self)) }
-        when("ARRAY")  { my @tmp = @{$self}; bless(\@tmp, ref($self)) }
-        when("HASH")   { my %tmp = %{$self}; bless(\%tmp, ref($self)) }
-    }
-};
+use Clone;
+*clone = *Clone::clone;
 
 1;
 
@@ -199,6 +194,3 @@ RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A
 FAILURE OF THE SOFTWARE TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF
 SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGES.
-
-
-

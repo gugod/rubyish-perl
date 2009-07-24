@@ -13,8 +13,8 @@ requires
     'YAML' => 0.68,
     'Data::Dumper' => 2.121,
     'Class::Inspector' => 1.23,
+    'Clone' => 0.31,
     'Sub::Exporter' => 0.982;
 
 auto_set_repository;
 WriteAll;
-
