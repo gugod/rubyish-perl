@@ -40,7 +40,7 @@ Kang-min Liu  C<< <gugod@gugod.org> >>, shelling C<shelling@cpan.org>
 
 =head1 LICENCE AND COPYRIGHT
 
-Copyright (c) 2008, Kang-min Liu C<< <gugod@gugod.org> >>.
+Copyright (c) 2008,2009, Kang-min Liu C<< <gugod@gugod.org> >>.
 
 This is free software, licensed under:
 
