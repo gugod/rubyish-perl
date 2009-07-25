@@ -1,5 +1,13 @@
 # Revision history for Perl extension Rubyish.
 
+0.32:
+  - implements 'true', 'false' keywords
+  - implements Array#first, Array#last
+  - implements Object#clone
+  - Adds a Rubyish::Dir class
+  - automatically inject Rubyish::Autobox whenever saying 'use Rubyish'
+  - Rubyish::String now properly overload '+', 'eq' and stringification operations.
+
 0.31:
   - Add "class" syntax. WOOT.
   - More docs.
@@ -25,16 +33,16 @@
 
       Class:
         - #class, #superclass
-  
+
       Kernel:
         - #String, #Array, #Hash, #puts
-  
+
       Array:
         - #new, #at, #size, #length, #each, #map, #join, #clear, #inspect
-  
+
       Hash:
         - #new, #fetch, #each, #map, #inspect
-  
+
       String:
         - #new
 
@@ -42,4 +50,3 @@
 
 0.01:
   - original version
-
