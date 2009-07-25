@@ -31,6 +31,6 @@ is $array->length, 101, "Array#length";
     $a->clear;
 
     is $a->size, 0;
-    is_deeply $a, [];
     is $a->object_id, $id, "The object identifier remains the same after it's cleared.";
+    is $a->[0], undef;
 }

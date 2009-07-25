@@ -23,7 +23,7 @@ else {
 
 ok !nil, "neg nil";
 
-is_deeply \@{nil->to_a}, [], "nil.to_a is an empty array";
+is nil->to_a->size, 0, "nil.to_a is an empty array";
 
 
 {

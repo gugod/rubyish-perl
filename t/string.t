@@ -5,7 +5,7 @@ use Rubyish;
 
 use Test::More;
 
-plan tests => 3;
+plan tests => 5;
 
 {
     my $s = String("fnord");
@@ -19,8 +19,10 @@ plan tests => 3;
   my $s1 = String("hello");
 
   is($s1, String("hello"));
+  is($s1, "hello");
 
   my $s2 = String(" world");
 
   is($s1 + $s2, String("hello world"));
+  is($s1 + $s2, "hello world");
 }

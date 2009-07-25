@@ -13,12 +13,13 @@ use overload
 (
   "+" => \&op_add,
   "eq" => \&op_eq,
+  '""' => \&op_stringify
 );
 
 =head2 new($scalar) #=> string object
 
 constructor
-    
+
     $string = Rubyish::String->new;             #=> bless( do{\(my $o = '')}, 'Rubyish::String' )
     $string = Rubyish::String->new("hello");    #=> bless( do{\(my $o = 'hello')}, 'Rubyish::String' )
     $string = String("hello");                  # do the same
@@ -35,7 +36,7 @@ sub new {
 =head2 replace($scalar) #=> $instance
 
 replace content
-    
+
     $string = Rubyish::String->new("hello");    #=> bless( do{\(my $o = 'hello')}, 'Rubyish::String' )
     $string->replace("world")                   #=> bless( do{\(my $o = 'world')}, 'Rubyish::String' )
 
@@ -83,6 +84,11 @@ sub op_eq {
   } else {
     undef;
   }
+}
+
+sub op_stringify {
+    my $self = shift;
+    return $$self;
 }
 
 1;

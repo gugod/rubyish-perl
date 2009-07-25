@@ -35,6 +35,9 @@ sub import {
             use Rubyish::Hash;
             use Rubyish::Dir;
            };
+
+    require Rubyish::Autobox;
+    Rubyish::Autobox::import($caller);
 };
 
 1;
@@ -130,4 +133,3 @@ RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A
 FAILURE OF THE SOFTWARE TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF
 SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGES.
-

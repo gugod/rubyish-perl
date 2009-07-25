@@ -2,7 +2,6 @@
 
 use strict;
 use Rubyish;
-use Rubyish::Autobox;
 
 use Test::More;
 
