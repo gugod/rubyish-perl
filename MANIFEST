@@ -1,10 +1,10 @@
-.shipit
 Changes
 examples/array.pl
 examples/autobox.pl
 examples/cat.pl
 examples/hash.pl
 examples/lib/Cat.pm
+examples/namespace.pl
 examples/object.pl
 examples/reflect.pl
 examples/string.pl
@@ -14,13 +14,16 @@ inc/Module/Install/Can.pm
 inc/Module/Install/Fetch.pm
 inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
+inc/Module/Install/Repository.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/Rubyish.pm
 lib/Rubyish/Array.pm
 lib/Rubyish/Autobox.pm
 lib/Rubyish/Class.pm
+lib/Rubyish/Dir.pm
 lib/Rubyish/Enumerable.pm
+lib/Rubyish/FalseClass.pm
 lib/Rubyish/Hash.pm
 lib/Rubyish/Kernel.pm
 lib/Rubyish/Module.pm
@@ -29,8 +32,11 @@ lib/Rubyish/Object.pm
 lib/Rubyish/String.pm
 lib/Rubyish/Syntax/class.pm
 lib/Rubyish/Syntax/def.pm
+lib/Rubyish/Syntax/false.pm
 lib/Rubyish/Syntax/include.pm
 lib/Rubyish/Syntax/nil.pm
+lib/Rubyish/Syntax/true.pm
+lib/Rubyish/TrueClass.pm
 LICENSE
 Makefile.PL
 MANIFEST			This list of files
@@ -41,6 +47,8 @@ t/array.t
 t/autobox.t
 t/cats.t
 t/class.t
+t/def.t
+t/dir.t
 t/empty-object.t
 t/hash.t
 t/lib/Animal.pm
@@ -55,4 +63,5 @@ t/objects.t
 t/rubyish-syntax-class.t
 t/simple-object.t
 t/string.t
+t/true.t
 TODO
