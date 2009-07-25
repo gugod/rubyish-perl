@@ -1,7 +1,4 @@
-# auto-generated shipit config file.
-steps = FindVersion, ChangeVersion, CheckChangeLog, DistTest, MakeDist, UploadCPAN, Twitter
-
-CheckChangeLog.files = Changes
+steps = FindVersion, ChangeVersion, CheckChangeLog, DistTest, Commit, Tag, MakeDist, UploadCPAN, Twitter
+git.tagpattern = release-%v
 twitter.config = /Users/gugod/.twitterrc
-twitter.distname = Rubyish
-twitter.message = Shipped %d %v - soon at %u
+
