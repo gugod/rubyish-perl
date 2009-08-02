@@ -11,8 +11,7 @@ sub _uplevel_args {
 
 sub import {
     my $package = caller;
-    *{$package.'::self'} = \&package;
-    *{$package.'::self'} = sub {
+    *{$package.'::self'} = sub() {
         return (caller(1))[3] ? (_uplevel_args)[0] : $package;
     };
 }
