@@ -1,6 +1,6 @@
 #!/usr/bin/env perl -w
 use strict;
-use Test::More;
+use Test::More tests => 4;
 use UNIVERSAL::can;
 use Rubyish::Syntax::self;
 
@@ -19,4 +19,4 @@ ok( !$o->has_fnord );
 $o->{fnord} = 1;
 ok( $o->has_fnord );
 
-done_testing;
+# done_testing(4);
