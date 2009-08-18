@@ -11,10 +11,20 @@ use 5.010;
 use base "Rubyish::Object";
 use Rubyish::Syntax::def;
 
+sub new {
+  my ($class, $dirname) = @_;
+  return \$dirname, $class;
+}
 
-def pwd {
+
+sub pwd {
+  my ($class) = @_;
+  if ($class eq __PACKAGE__) {
     use Cwd;
     cwd();
+  } elsif (ref($class)) {
+    warn "undefine method \'pwd\' for __PACKAGE__ instance";
+  }
 };
 
 1;

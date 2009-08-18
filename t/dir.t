@@ -3,9 +3,9 @@ use strict;
 
 use Rubyish;
 
-use Test::More;
+use Test::More "no_plan";
 
-plan tests => 1;
+can_ok( "Rubyish::Dir", qw(new pwd) );
 
 ok( Rubyish::Dir->pwd );
 
