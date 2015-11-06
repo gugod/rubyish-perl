@@ -1,5 +1,9 @@
 # Revision history for Perl extension Rubyish.
 
+0.33:
+  - Convert from Module::Install to Dist-Zilla as Module::Install has largely
+  been abandoned.
+
 0.32:
   - implements 'true', 'false' keywords
   - implements Array#first, Array#last
