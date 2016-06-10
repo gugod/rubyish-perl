@@ -11,8 +11,8 @@ use Rubyish::Syntax::def;
 
 use overload
 (
+  fallback => 1,
   "+" => \&op_add,
-  "eq" => \&op_eq,
   '""' => \&op_stringify
 );
 
@@ -75,15 +75,6 @@ def gsub($pattern, $replacement) {
 sub op_add {
   my ($self, $other) = @_;
   return ref($self)->new(${$self}.${$other});
-}
-
-sub op_eq {
-  my ($self, $other) = @_;
-  if (${$self} eq ${$other}) {
-    return 1;
-  } else {
-    undef;
-  }
 }
 
 sub op_stringify {

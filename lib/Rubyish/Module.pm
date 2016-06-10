@@ -3,6 +3,7 @@ use strict;
 package Rubyish::Module;
 use base 'Rubyish::Object';
 use Class::Inspector;
+use Sub::Install;
 
 # A Rubyish Module exports all of its subs to caller.
 sub import {
